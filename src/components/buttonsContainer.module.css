@@ -1,0 +1,19 @@
+.buttonsContainer {
+  padding: 10px;
+  height: 80%; 
+}
+
+.gridContainer {
+  display: grid;
+  gap:10px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 50px);
+  grid-template-areas: 
+    "percent CE C del"
+    "inv sqr sqrt div"
+    "seven height nine times"
+    "four five six minus"
+    "one two three plus"
+    "plus-minus zero comma equal"
+  ;
+}

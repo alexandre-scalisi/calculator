@@ -1,0 +1,18 @@
+.container {
+  height: 80px;
+  background-color: rgb(23, 99, 146);
+  border-bottom: 1px black solid;
+  padding: 10px;
+}
+
+.input {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: transparent;
+  text-align: end;
+  font-size: 36px;
+  color: #eee;
+}
