@@ -1,15 +1,14 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import classes from './calculator.module.css';
 import BeautifulScreen from './BeautifulScreen';
 import ButtonContainer from './ButtonsContainer';
 
-const Calculator = () => {
-  const inputState = useState('0');
 
+const Calculator = () => {
   return (
     <div className={classes.calculator}>
-      <BeautifulScreen inputState={inputState}/>
-      <ButtonContainer inputState={inputState}/>
+      <BeautifulScreen/>
+      <ButtonContainer/>
     </div>
   )
 }

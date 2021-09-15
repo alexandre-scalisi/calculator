@@ -3,8 +3,8 @@ import AmazingNumberButton from './AmazingNumberButton';
 const ButtonsContainer = ({ inputState }) => (
   <div className={classes.buttonsContainer}>
     <div className={classes.gridContainer}>
-      <AmazingNumberButton val="1" inline="one" inputState={inputState} />
-      <AmazingNumberButton val="0" inline="zero" inputState={inputState} />
+      <AmazingNumberButton val="1" inline="one" />
+      <AmazingNumberButton val="0" inline="zero" />
     </div>
   </div>
 );

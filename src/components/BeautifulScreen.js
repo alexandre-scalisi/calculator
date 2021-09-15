@@ -1,5 +1,6 @@
-import { useEffect } from 'react';
 import classes from './beautifulScreen.module.css';
+import { useContext } from 'react';
+import { ScreenContext } from '../contexts/ScreenContext';
 
 const BeautifulScreen = ({ inputState }) => {
   const [inputNumberState, setInputNumberState] = inputState; 
@@ -7,12 +8,10 @@ const BeautifulScreen = ({ inputState }) => {
   // useEffect(() => {
   //   document.title = `Vous avez cliqué ${inputNumberState} fois`;
   // });
-
-  document.title = Date.now()
-
+  const {screenState} = useContext(ScreenContext)
   return (
     <div className={classes.container}>
-      <input type="text" className={classes.input} value="0" disabled />
+      <input type="text" className={classes.input} value={screenState} disabled />
     </div>
   );
 };
