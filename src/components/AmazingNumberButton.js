@@ -1,23 +1,26 @@
-import {useState, useEffect} from 'react';
+import {useState, useContext} from 'react';
+import {ScreenContext} from '../contexts/ScreenContext'
 import classes from './amazingNumberButton.module.css';
 
 const AmazingNumberButton = (props) => {
-  const [inputNumberState, setInputNumberState] = props.inputState; 
-  const click = () => {
-    if((inputNumberState === '0' && props.val === '0') || inputNumberState.length > 10)
+  const { screenState, setScreenState } = useContext(ScreenContext);
+  const maxBtnLength = 13;
+  
+  const clickButton = () => {
+
+    if((screenState === '0' && props.val === '0') || screenState.length > maxBtnLength)
       return;
-    if(inputNumberState === '0') {
-      setInputNumberState(props.val)
-      return;
-    }
-    setInputNumberState(inputNumberState + props.val)
+    if(screenState === '0') 
+      return setScreenState(props.val)
+    
+    setScreenState(screenState + props.val)
   }
 
-  
   return (
-    <button className={classes.button} style={{ gridArea: props.inline }} value={props.val} onClick={click}>
+    <button className={classes.button} style={{ gridArea: props.inline }} value={props.val} onClick={clickButton}>
       {props.val}
     </button>
   ) 
 }
+
 export default AmazingNumberButton;
