@@ -1,7 +1,8 @@
 import classes from './buttonsContainer.module.css';
 import AmazingNumberButton from './AmazingNumberButton';
-import {AmazingNumberButtons, GreatOperationButtons} from '../data/buttons.json';
 import GreatOperationButton from './GreatOperationButton';
+import MagnificientEqualButton from "./MagnificientEqualButton";
+import {AmazingNumberButtons, GreatOperationButtons} from '../data/buttons.json';
 
 const ButtonsContainer = () => {
   const numberButtons = AmazingNumberButtons.map((amazingButton, i) =>
@@ -20,6 +21,7 @@ const ButtonsContainer = () => {
       <div className={classes.gridContainer}>
         {numberButtons}
         {operationButtons}
+        <MagnificientEqualButton val="=" inline={"equal"} />
       </div>
     </div>
   );

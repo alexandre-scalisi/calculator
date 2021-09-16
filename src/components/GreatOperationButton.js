@@ -1,29 +1,51 @@
 import {useContext} from 'react';
 import {ScreenContext} from '../contexts/ScreenContext'
 import {ActionContext} from '../contexts/ActionContext'
+import {OperatorContext} from '../contexts/OperatorContext'
 import classes from './amazingNumberButton.module.css';
+import calculate from '../helpers/calculate';
+
+
+
 
 const GreatOperationButton = (props) => {
-  const { operationScreenState, setOperationScreenState, resultScreenState } =
+
+  const click = () => {
+    setActionState('operation')
+
+    if(actionState === 'equal') {
+      setOperatorState(props.val);
+      return setOperationScreenState(
+        parseFloat(resultScreenState) + " " + props.val
+      );
+    }
+
+    if (actionState === 'operation') {
+      setOperatorState(props.val);
+      return setOperationScreenState(parseFloat(operationScreenState) + ' ' + props.val);
+    }
+
+    const val = calculate(
+      operatorState,
+      parseFloat(operationScreenState),
+      parseFloat(resultScreenState),
+    );
+    setOperationScreenState(val + " " + props.val);
+    setResultScreenState(val);
+    setOperatorState(props.val);
+  }
+  
+
+  const { operationScreenState, setOperationScreenState, setResultScreenState, resultScreenState } =
     useContext(ScreenContext);
   const { actionState, setActionState } = useContext(ActionContext);
-  const click = () => {
-    setActionState('Operation')
-    if (actionState === 'Operation')
-      return setOperationScreenState(resultScreenState.slice(-1) + ' ' + props.val);
-      if (!operationScreenState)
-        return setOperationScreenState(resultScreenState + " " + props.val);
-    setOperationScreenState('')
-  }
-
+  const { operatorState, setOperatorState } = useContext(OperatorContext);
+  
   return (
     <button className={classes.button} style={{ gridArea: props.inline }} value={props.val} onClick={click}>
       {props.val}
     </button>
   ) 
 }
-
-
-
 
 export default GreatOperationButton;
