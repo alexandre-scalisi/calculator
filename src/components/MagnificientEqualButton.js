@@ -5,6 +5,7 @@ import { OperatorContext } from "../contexts/OperatorContext";
 import classes from "./magnificientEqualButton.module.css";
 import calculate from "../helpers/calculate";
 
+
 const MagnificientEqualButton = (props) => {
 
   const {operatorState} = useContext(OperatorContext);
@@ -30,7 +31,7 @@ const MagnificientEqualButton = (props) => {
     }
     console.log(operands, op1, op2)
     const res = calculate(operatorState, op1, op2)
-    // console.log(res)
+
     setOperationScreenState(`${op1} ${operatorState} ${op2} =`)
     setResultScreenState(res)
   }
