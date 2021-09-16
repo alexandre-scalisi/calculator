@@ -1,15 +1,15 @@
 {
   "AmazingNumberButtons": [
-    { "val": 0, "inline": "zero"},
-    { "val": 1, "inline": "one"},
-    { "val": 2, "inline": "two"},
-    { "val": 3, "inline": "three"},
-    { "val": 4, "inline": "four"},
-    { "val": 5, "inline": "five"},
-    { "val": 6, "inline": "six"},
-    { "val": 7, "inline": "seven"},
-    { "val": 8, "inline": "height"},
-    { "val": 9, "inline": "nine"}
+    { "val": "0", "inline": "zero"},
+    { "val": "1", "inline": "one"},
+    { "val": "2", "inline": "two"},
+    { "val": "3", "inline": "three"},
+    { "val": "4", "inline": "four"},
+    { "val": "5", "inline": "five"},
+    { "val": "6", "inline": "six"},
+    { "val": "7", "inline": "seven"},
+    { "val": "8", "inline": "height"},
+    { "val": "9", "inline": "nine"}
   ],
   "GreatOperationButtons": [
     {"val": "+", "inline": "plus"},

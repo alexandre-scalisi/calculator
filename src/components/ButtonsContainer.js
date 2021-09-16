@@ -1,6 +1,7 @@
 import classes from './buttonsContainer.module.css';
 import AmazingNumberButton from './AmazingNumberButton';
 import {AmazingNumberButtons, GreatOperationButtons} from '../data/buttons.json';
+import GreatOperationButton from './GreatOperationButton';
 
 const ButtonsContainer = () => {
   const numberButtons = AmazingNumberButtons.map((amazingButton, i) =>
@@ -8,9 +9,9 @@ const ButtonsContainer = () => {
   )
 
   const operationButtons = GreatOperationButtons.map((greatButton, i) => (
-    <AmazingNumberButton
+    <GreatOperationButton
       val={greatButton.val}
-      inline={greatButton.inline}
+      inline={[greatButton.inline, ]}
       key={i}
     />
   ));

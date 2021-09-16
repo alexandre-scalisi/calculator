@@ -6,13 +6,22 @@
 }
 
 .input {
-  height: 100%;
-  width: 100%;
   padding: 0;
   margin: 0;
   border: 0;
   background-color: transparent;
+  width: 100%;
   text-align: end;
-  font-size: 36px;
   color: #eee;
+}
+
+.operation {
+  height: 40%;
+  font-size: 22px;
+  color: rgb(202, 208, 212);
+}
+
+.result {
+  height: 60%;
+  font-size: 40px;
 }

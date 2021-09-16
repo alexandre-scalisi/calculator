@@ -3,10 +3,22 @@ import { useContext } from 'react';
 import { ScreenContext } from '../contexts/ScreenContext';
 
 const BeautifulScreen = () => {
-  const {screenState} = useContext(ScreenContext)
+  const { resultScreenState } = useContext(ScreenContext);
+  const { operationScreenState } = useContext(ScreenContext);
   return (
     <div className={classes.container}>
-      <input type="text" className={classes.input} value={screenState} disabled />
+      <input
+        type="text"
+        className={`${classes.input} ${classes.operation}`}
+        value={operationScreenState}
+        disabled
+      />
+      <input
+        type="text"
+        className={`${classes.input} ${classes.result}`}
+        value={resultScreenState}
+        disabled
+      />
     </div>
   );
 };
