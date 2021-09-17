@@ -3,8 +3,6 @@ import { ScreenContext } from "../contexts/ScreenContext";
 import { ActionContext } from "../contexts/ActionContext";
 import { OperatorContext } from "../contexts/OperatorContext";
 import classes from "./magnificientEqualButton.module.css";
-import calculate from "../helpers/calculate";
-
 
 const MagnificientEqualButton = (props) => {
 
@@ -13,7 +11,7 @@ const MagnificientEqualButton = (props) => {
   const { resultScreenState, setResultScreenState, operationScreenState, setOperationScreenState } =
     useContext(ScreenContext);
 
-  const click = () => {
+  const click = async () => {
     setActionState("equal");
     
     if(!operatorState)
@@ -30,8 +28,11 @@ const MagnificientEqualButton = (props) => {
       op2 = isNaN(parseFloat(operands[1])) ? op1 : parseFloat(operands[1]); 
     }
     console.log(operands, op1, op2)
-    const res = calculate(operatorState, op1, op2)
-
+    const res = props.calculate(operatorState, op1, op2)
+    if(res > 9000) {
+      await setActionState('over9000')
+      return;
+    }
     setOperationScreenState(`${op1} ${operatorState} ${op2} =`)
     setResultScreenState(res)
   }

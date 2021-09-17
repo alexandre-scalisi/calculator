@@ -3,7 +3,6 @@ import { useContext } from 'react';
 import classes from './amazingNumberButton.module.css';
 import {ScreenContext} from '../contexts/ScreenContext'
 import {ActionContext} from "../contexts/ActionContext";
-import {OperatorContext} from "../contexts/OperatorContext";
 
 const DelButton = (props) => {
     const { actionState, setActionState } = useContext(ActionContext);

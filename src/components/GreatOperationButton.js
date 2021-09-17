@@ -3,7 +3,6 @@ import {ScreenContext} from '../contexts/ScreenContext'
 import {ActionContext} from '../contexts/ActionContext'
 import {OperatorContext} from '../contexts/OperatorContext'
 import classes from './amazingNumberButton.module.css';
-import calculate from '../helpers/calculate';
 
 
 
@@ -25,7 +24,7 @@ const GreatOperationButton = (props) => {
       return setOperationScreenState(parseFloat(operationScreenState) + ' ' + props.val);
     }
 
-    const val = calculate(
+    const val = props.calculate(
       operatorState,
       parseFloat(operationScreenState),
       parseFloat(resultScreenState),

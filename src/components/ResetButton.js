@@ -5,7 +5,6 @@ import {ScreenContext} from '../contexts/ScreenContext'
 import {ActionContext} from "../contexts/ActionContext";
 import {OperatorContext} from "../contexts/OperatorContext";
 
-import reset from '../helpers/Reset';
 
 const ResetButton = (props) => {
     const { actionState, setActionState } = useContext(ActionContext);
@@ -19,7 +18,7 @@ const ResetButton = (props) => {
       const {operatorState, setOperatorState} = useContext(OperatorContext)
 
     const clickButton = () => {
-        reset(
+        props.reset(
             setActionState,
             setOperatorState,
             setResultScreenState,

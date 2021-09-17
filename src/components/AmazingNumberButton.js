@@ -2,7 +2,6 @@ import {useContext} from 'react';
 import {ScreenContext} from '../contexts/ScreenContext'
 import {ActionContext} from "../contexts/ActionContext";
 import {OperatorContext} from "../contexts/OperatorContext";
-import reset from '../helpers/Reset';
 
 import classes from './amazingNumberButton.module.css';
 
@@ -19,7 +18,7 @@ const AmazingNumberButton = (props) => {
     if(actionState === 'operation')
       return setResultScreenState(props.val);
     if(actionState === 'equal'){
-      reset(
+      props.reset(
         setActionState,
         setOperatorState,
         setResultScreenState,
