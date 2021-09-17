@@ -10,9 +10,9 @@ const AmazingNumberButton = (props) => {
     actionState,
     setActionState,
     setOperatorState,
-    setOperationScreenState,
-    resultScreenState,
-    setResultScreenState,
+    setUpperScreenState,
+    lowerScreenState,
+    setLowerScreenState,
   } = useContext(CalcContext);
 
   const handleClick = () => {
@@ -20,27 +20,27 @@ const AmazingNumberButton = (props) => {
       return;
 
     setActionState("number");
-    if (actionState === "operation") return setResultScreenState(props.val);
+    if (actionState === "operation") return setLowerScreenState(props.val);
 
     if (actionState === "equal") {
       props.reset(
         setActionState,
         setOperatorState,
-        setResultScreenState,
-        setOperationScreenState
+        setLowerScreenState,
+        setUpperScreenState
       );
-      return setResultScreenState(props.val);
+      return setLowerScreenState(props.val);
     }
 
     if (
-      (resultScreenState === "0" && props.val === "0") ||
-      resultScreenState.length > process.env.REACT_APP_MAX_INPUT_LENGTH
+      (lowerScreenState === "0" && props.val === "0") ||
+      lowerScreenState.length > process.env.REACT_APP_MAX_INPUT_LENGTH
     )
       return;
 
-    if (resultScreenState === "0") return setResultScreenState(props.val);
+    if (lowerScreenState === "0") return setLowerScreenState(props.val);
 
-    setResultScreenState(resultScreenState + props.val);
+    setLowerScreenState(lowerScreenState + props.val);
   };
 
   return (

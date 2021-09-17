@@ -42,13 +42,13 @@ const ButtonsContainer = () => {
   const reset = (
     setActionState,
     setOperatorState,
-    setResultScreenState,
-    setOperationScreenState
+    setLowerScreenState,
+    setUpperScreenState
   ) => {
     setActionState(process.env.REACT_APP_ACTION_STATE);
     setOperatorState(process.env.REACT_APP_OPERATOR_STATE);
-    setResultScreenState(process.env.REACT_APP_RESULT_SCREEN_STATE);
-    setOperationScreenState(process.env.REACT_APP_OPERATION_SCREEN_STATE);
+    setLowerScreenState(process.env.REACT_APP_LOWER_SCREEN_STATE);
+    setUpperScreenState(process.env.REACT_APP_UPPER_SCREEN_STATE);
   };
 
   const numberButtons = AmazingNumberButtons.map((amazingButton, i) => (

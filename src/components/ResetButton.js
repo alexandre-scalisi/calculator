@@ -8,8 +8,8 @@ import classes from "./resetButton.module.css";
 const ResetButton = (props) => {
   const {
     setActionState,
-    setResultScreenState,
-    setOperationScreenState,
+    setLowerScreenState,
+    setUpperScreenState,
     setOperatorState,
   } = useContext(CalcContext);
 
@@ -17,8 +17,8 @@ const ResetButton = (props) => {
     props.reset(
       setActionState,
       setOperatorState,
-      setResultScreenState,
-      setOperationScreenState
+      setLowerScreenState,
+      setUpperScreenState
     );
   };
 

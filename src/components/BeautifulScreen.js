@@ -3,20 +3,20 @@ import { useContext } from "react";
 import { CalcContext } from "../contexts/CalcContext";
 
 const BeautifulScreen = () => {
-  const { resultScreenState, operationScreenState } = useContext(CalcContext);
+  const { lowerScreenState, upperScreenState } = useContext(CalcContext);
 
   return (
     <div className={classes.container}>
       <input
         type="text"
         className={`${classes.input} ${classes.operation}`}
-        value={operationScreenState}
+        value={upperScreenState}
         disabled
       />
       <input
         type="text"
         className={`${classes.input} ${classes.result}`}
-        value={resultScreenState}
+        value={lowerScreenState}
         disabled
       />
     </div>

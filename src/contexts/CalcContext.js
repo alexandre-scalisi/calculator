@@ -9,11 +9,11 @@ export const CalcProvider = (props) => {
   const [operatorState, setOperatorState] = useState(
     process.env.REACT_APP_OPERATOR_STATE
   );
-  const [resultScreenState, setResultScreenState] = useState(
-    process.env.REACT_APP_RESULT_SCREEN_STATE
+  const [lowerScreenState, setLowerScreenState] = useState(
+    process.env.REACT_APP_LOWER_SCREEN_STATE
   );
-  const [operationScreenState, setOperationScreenState] = useState(
-    process.env.REACT_APP_OPERATION_SCREEN_STATE
+  const [upperScreenState, setUpperScreenState] = useState(
+    process.env.REACT_APP_UPPER_SCREEN_STATE
   );
 
   return (
@@ -23,10 +23,10 @@ export const CalcProvider = (props) => {
         setActionState,
         operatorState,
         setOperatorState,
-        resultScreenState,
-        setResultScreenState,
-        operationScreenState,
-        setOperationScreenState
+        lowerScreenState,
+        setLowerScreenState,
+        upperScreenState,
+        setUpperScreenState
       }}
     >
       {props.children}

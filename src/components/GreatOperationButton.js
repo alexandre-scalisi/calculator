@@ -6,10 +6,10 @@ import classes from "./greatOperationButton.module.css";
 
 const GreatOperationButton = (props) => {
   const {
-    operationScreenState,
-    setOperationScreenState,
-    setResultScreenState,
-    resultScreenState,
+    upperScreenState,
+    setUpperScreenState,
+    setLowerScreenState,
+    lowerScreenState,
     actionState,
     setActionState,
     operatorState,
@@ -25,18 +25,18 @@ const GreatOperationButton = (props) => {
 
     if (actionState === "equal" || actionState === "operation") {
       setOperatorState(props.val);
-      return setOperationScreenState(
-        parseFloat(resultScreenState) + " " + props.val
+      return setUpperScreenState(
+        parseFloat(lowerScreenState) + " " + props.val
       );
     }
 
     const val = props.calculate(
       operatorState,
-      parseFloat(operationScreenState),
-      parseFloat(resultScreenState)
+      parseFloat(upperScreenState),
+      parseFloat(lowerScreenState)
     );
-    setOperationScreenState(val + " " + props.val);
-    setResultScreenState(val);
+    setUpperScreenState(val + " " + props.val);
+    setLowerScreenState(val);
     setOperatorState(props.val);
   };
 

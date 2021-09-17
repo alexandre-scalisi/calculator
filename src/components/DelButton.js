@@ -8,22 +8,22 @@ import classes from "./amazingNumberButton.module.css";
 const DelButton = (props) => {
   const {
     actionState,
-    setOperationScreenState,
-    resultScreenState,
-    setResultScreenState,
+    setUpperScreenState,
+    lowerScreenState,
+    setLowerScreenState,
   } = useContext(CalcContext);
   const handleClick = () => {
     if (actionState !== "equal" || actionState !== "number") return;
 
     if (actionState === "equal")
-      return setOperationScreenState(
-        process.env.REACT_APP_OPERATION_SCREEN_STATE
+      return setUpperScreenState(
+        process.env.REACT_APP_UPPER_SCREEN_STATE
       );
 
-    if (resultScreenState.length > 1)
-      return setResultScreenState(resultScreenState.slice(0, -1));
+    if (lowerScreenState.length > 1)
+      return setLowerScreenState(lowerScreenState.slice(0, -1));
 
-    setResultScreenState(process.env.REACT_APP_RESULT_SCREEN_STATE);
+    setLowerScreenState(process.env.REACT_APP_LOWER_SCREEN_STATE);
   };
 
   return (
