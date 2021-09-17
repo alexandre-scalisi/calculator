@@ -12,6 +12,7 @@ const DelButton = (props) => {
     lowerScreenState,
     setLowerScreenState,
   } = useContext(CalcContext);
+  
   const handleClick = () => {
     if (actionState !== "equal" || actionState !== "number") return;
 

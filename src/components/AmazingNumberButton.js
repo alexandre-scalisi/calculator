@@ -16,8 +16,7 @@ const AmazingNumberButton = (props) => {
   } = useContext(CalcContext);
 
   const handleClick = () => {
-    if(actionState === "over9000") 
-      return;
+    if (actionState === "over9000") return;
 
     setActionState("number");
     if (actionState === "operation") return setLowerScreenState(props.val);
