@@ -1,37 +1,39 @@
-import { useContext } from 'react';
+import { useContext } from "react";
+import { CalcContext } from "../contexts/CalcContext";
 
-import classes from './amazingNumberButton.module.css';
-import {ScreenContext} from '../contexts/ScreenContext'
-import {ActionContext} from "../contexts/ActionContext";
+import Button from "./Button";
+
+import classes from "./amazingNumberButton.module.css";
 
 const DelButton = (props) => {
-    const { actionState, setActionState } = useContext(ActionContext);
-    const {
-        resultScreenState,
-        setResultScreenState,
-        operationScreenState,
-        setOperationScreenState
-      } = useContext(ScreenContext)
+  const {
+    actionState,
+    setOperationScreenState,
+    resultScreenState,
+    setResultScreenState,
+  } = useContext(CalcContext);
+  const handleClick = () => {
+    if (actionState !== "equal" || actionState !== "number") return;
 
-    const clickButton = () => {
-        if(actionState==="equal") {
-            setOperationScreenState(process.env.REACT_APP_OPERATION_SCREEN_STATE)
-            return
-        }
+    if (actionState === "equal")
+      return setOperationScreenState(
+        process.env.REACT_APP_OPERATION_SCREEN_STATE
+      );
 
-        if(actionState === 'number') {
-            if(resultScreenState.length > 1)
-                setResultScreenState(resultScreenState.slice(0, -1))
-            else 
-            setResultScreenState(process.env.REACT_APP_RESULT_SCREEN_STATE)
-        } 
-    }
+    if (resultScreenState.length > 1)
+      return setResultScreenState(resultScreenState.slice(0, -1));
 
-    return (
-        <button className={classes.button} style={{ gridArea: props.inline }} value={props.val} onClick={clickButton}>
-        {props.val}
-      </button>
-    )
-}
+    setResultScreenState(process.env.REACT_APP_RESULT_SCREEN_STATE);
+  };
+
+  return (
+    <Button
+      classes={classes}
+      inline={props.inline}
+      val={props.val}
+      handleClick={handleClick}
+    />
+  );
+};
 
 export default DelButton;

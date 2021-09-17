@@ -1,36 +1,35 @@
-import { useContext } from 'react';
+import { useContext } from "react";
+import { CalcContext } from "../contexts/CalcContext";
 
-import classes from './amazingNumberButton.module.css';
-import {ScreenContext} from '../contexts/ScreenContext'
-import {ActionContext} from "../contexts/ActionContext";
-import {OperatorContext} from "../contexts/OperatorContext";
+import Button from "./Button";
 
+import classes from "./resetButton.module.css";
 
 const ResetButton = (props) => {
-    const { actionState, setActionState } = useContext(ActionContext);
-    const {
-        resultScreenState,
-        setResultScreenState,
-        operationScreenState,
-        setOperationScreenState
-      } = useContext(ScreenContext)
-    
-      const {operatorState, setOperatorState} = useContext(OperatorContext)
+  const {
+    setActionState,
+    setResultScreenState,
+    setOperationScreenState,
+    setOperatorState,
+  } = useContext(CalcContext);
 
-    const clickButton = () => {
-        props.reset(
-            setActionState,
-            setOperatorState,
-            setResultScreenState,
-            setOperationScreenState
-          );
-    }
+  const handleClick = () => {
+    props.reset(
+      setActionState,
+      setOperatorState,
+      setResultScreenState,
+      setOperationScreenState
+    );
+  };
 
-    return (
-        <button className={classes.button} style={{ gridArea: props.inline }} value={props.val} onClick={clickButton}>
-        {props.val}
-      </button>
-    )
-}
+  return (
+    <Button
+      classes={classes}
+      inline={props.inline}
+      val={props.val}
+      handleClick={handleClick}
+    />
+  );
+};
 
 export default ResetButton;

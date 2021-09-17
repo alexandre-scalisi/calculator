@@ -1,10 +1,10 @@
-import classes from './beautifulScreen.module.css';
-import { useContext } from 'react';
-import { ScreenContext } from '../contexts/ScreenContext';
+import classes from "./beautifulScreen.module.css";
+import { useContext } from "react";
+import { CalcContext } from "../contexts/CalcContext";
 
 const BeautifulScreen = () => {
-  const { resultScreenState } = useContext(ScreenContext);
-  const { operationScreenState } = useContext(ScreenContext);
+  const { resultScreenState, operationScreenState } = useContext(CalcContext);
+
   return (
     <div className={classes.container}>
       <input

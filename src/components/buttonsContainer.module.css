@@ -8,6 +8,7 @@
   gap:10px;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(6, 50px);
+  
   grid-template-areas: 
     "percent CE C del"
     "inv sqr sqrt div"

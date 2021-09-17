@@ -16,5 +16,14 @@
     {"val": "-", "inline": "minus"},
     {"val": "x", "inline": "times"},
     {"val": "/", "inline": "div"}
+  ],
+  "UnusedButtons": [
+    {"val": "%", "inline": "percent"},
+    {"val": "CE", "inline": "CE"},
+    {"val": "1/x", "inline": "inv"},
+    {"val": "x²", "inline": "sqr"},
+    {"val": "√", "inline": "sqrt"},
+    {"val": "+/-", "inline": "plus-minus"},
+    {"val": ",", "inline": "comma"}
   ]
 }
